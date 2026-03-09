@@ -19,7 +19,7 @@ const selectAllBtn = createElement("button", {
 }, [ createElement("i", { className: "ph-bold ph-selection-all" }) ]
 );
 selectAllBtn.addEventListener("click", () => {
-  if (!list_section.classList.contains("selection")) return;
+  if (!list_section.classList.contains("selection")) enterSelection();
   area.selectedVectorList = area.vectorList;
   listEl.querySelectorAll<HTMLButtonElement>(".vector-btn").forEach(btn => {
     btn.classList.add("checked");

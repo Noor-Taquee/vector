@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 :root {
-  --primary-header-font: 700 25px sans-serif;
-  --primary-text-font: 400 17px sans-serif;
+  --primary-header-font: 700 25px "Nunito";
+  --primary-text-font: 400 17px "Nunito";
 
   --primary-icon-size: 25px;
   --medium-icon-size: 20px;
@@ -307,6 +308,7 @@ html, body {
 }
 
 .utility-btn {
+  cursor: pointer;
   padding: 5px;
   border: none;
   border-radius: 5px;
@@ -365,6 +367,7 @@ html, body {
   i { font-size: var(--small-icon-size); }
   
   .delete-btn, .selection-div {
+    cursor: pointer;
     padding: 5px;
     border: none;
     border-radius: 6px;
@@ -398,6 +401,7 @@ html, body {
 /*#endregion List */
 
 .action-btn {
+  cursor: pointer;
   height: 40px;
   width: 100%;
   margin: 5px 0;
@@ -420,6 +424,7 @@ html, body {
 */
 
 .inactive {
+  cursor: not-allowed !important;
   touch-action: none !important;
   opacity: 0.5 !important;
 }
