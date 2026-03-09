@@ -1,0 +1,21 @@
+{
+  "name": "vector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taquee-school/vector.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Taquee-school/vector/issues"
+  },
+  "homepage": "https://github.com/Taquee-school/vector#readme"
+}
