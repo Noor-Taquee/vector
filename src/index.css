@@ -53,6 +53,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: var(--primary-bg);
 }
 
 /*#region MARK: area 
@@ -104,6 +105,7 @@ html, body {
   height: var(--length);
   width: var(--width);
   border-radius: calc(var(--width) / 2);
+  corner-shape: bevel bevel round round;
   transform-origin: bottom center;
   background: var(--color);
   rotate: calc(90deg - var(--angle));
@@ -124,16 +126,21 @@ html, body {
     ;
   }
 
-  &::before {
-    --border: 1px solid var(--color);
+  &::after {
+    --border: clamp(0px, calc(var(--length) / 10), 15px);
 
     content: "";
-    background: var(--color);
-    border-top: var(--border);
-    border-left: var(--border);
-    border-right: var(--border);
-    rotate: 90deg;
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    height: 0;
+    width: 0;
+    border-left: var(--border) solid transparent;
+    border-right: var(--border) solid transparent;
+    border-bottom: calc(var(--border) + var(--border) / 5) solid var(--color);
+    /* rotate: 90deg; */
   }
 }
 /*#endregion area
@@ -183,14 +190,17 @@ html, body {
 }
 
 .toggle {
-  --size: 35px;
+  --size: 37px;
+
+  cursor: pointer;
   height: var(--size);
   width: var(--size);
   border: none;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: var(--medium-icon-size);
+  background: var(--tertiary-bg);
+  i { font-size: var(--medium-icon-size); }
 }
 
 #controller .section {
@@ -246,7 +256,7 @@ html, body {
     color: var(--primary-text-color);
 
     &.cordinate-input {
-      width: 50px;
+      width: 70px;
     }
     
     &.edit {
@@ -258,6 +268,8 @@ html, body {
 
 #color-input-wrapper {
   --size: 35px;
+
+  cursor: pointer;
   height: var(--size);
   width: var(--size);
   overflow: hidden;
@@ -275,6 +287,7 @@ html, body {
   }
 
   input[type="color"] {
+    cursor: pointer;
     height: 200%;
     width: 200%;
     outline: none !important;

@@ -8,7 +8,6 @@ export class Area {
     selectedVectorList = [];
     constructor() {
         window.addEventListener("resize", () => { this.configCenter(); });
-        requestAnimationFrame(this.configCenter);
         this.axes = {
             x: createElement("div", { className: "axis x" }),
             y: createElement("div", { className: "axis y" })
