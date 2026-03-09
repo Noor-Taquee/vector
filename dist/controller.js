@@ -3,6 +3,7 @@ import { Vector } from "./vector.js";
 import { info_section } from "./info.js";
 import { list_section } from "./vector-list.js";
 import { area } from "./area.js";
+import { app } from "./app.js";
 const showBtn = createElement("button", { id: "show-controller" });
 showBtn.addEventListener("click", showController);
 export function showController() {
@@ -18,13 +19,23 @@ const header = createElement("p", {
     className: "header",
     textContent: "Info"
 });
+const themeSwitchBtn = createElement("button", {
+    className: "toggle",
+}, [createElement("i", { className: "ph-bold ph-sun-dim" })]);
+themeSwitchBtn.addEventListener("click", () => {
+    app.dataset.theme = (app.dataset.theme == "light") ? "dark" : "light";
+    const icon = themeSwitchBtn.querySelector("i");
+    if (!icon)
+        return;
+    icon.className = (app.dataset.theme == "light") ? "ph-bold ph-sun-dim" : "ph-bold ph-moon";
+});
 const hideBtn = createElement("button", { id: "hide-controller" });
 hideBtn.addEventListener("click", hideController);
 function hideController() {
     controller.classList.add("hidden");
     showBtn.classList.remove("hidden");
 }
-controller_header.appendChild(header);
+controller_header.append(header, themeSwitchBtn);
 const addVectorBtn = createElement("button", {
     id: "add-vector",
     className: "action-btn"
