@@ -116,8 +116,8 @@ export class Vector {
     let y = 0;
     
     this.parents.forEach(vector => {
-      x += vector.component.i
-      y += vector.component.j
+      x += vector.component.i;
+      y += vector.component.j;
     });
     
     this.angle = Math.atan2(y, x) * (180/Math.PI);
