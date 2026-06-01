@@ -1,4 +1,4 @@
-import { createElement } from "./utils/create-dom.js";
+import { createElement } from "../utils/create-dom.js";
 
 import { area } from "./area.js";
 import { findResultant, Vector } from "./vector.js";

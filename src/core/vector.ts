@@ -1,5 +1,5 @@
-import { createElement } from "./utils/create-dom.js";
-import { generateId } from "./utils/logic/id.js";
+import { createElement } from "../utils/create-dom.js";
+import { generateId } from "../utils/logic/id.js";
 import { Area, area, type cordinate } from "./area.js";
 
 export class Vector {

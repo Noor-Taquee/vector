@@ -1,6 +1,6 @@
 
+import { createElement } from "../utils/create-dom.js";
 import { area } from "./area.js";
-import { createElement } from "./utils/create-dom.js";
 import { Vector } from "./vector.js";
 
 export const info_section = createElement("div", {

@@ -1,11 +1,11 @@
 
-import { createElement } from "./utils/create-dom.js";
+import { createElement } from "../utils/create-dom.js";
 import { Vector } from "./vector.js";
 
 import { info_section } from "./info.js";
 import { list_section } from "./vector-list.js";
 import { area } from "./area.js";
-import { app } from "./app.js";
+import { app } from "../app.js";
 
 const showBtn = createElement("button", { id: "show-controller" });
 showBtn.addEventListener("click", showController);

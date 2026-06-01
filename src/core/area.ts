@@ -1,5 +1,5 @@
 
-import { createElement } from "./utils/create-dom.js";
+import { createElement } from "../utils/create-dom.js";
 import type { Vector } from "./vector.js";
 
 export type cordinate = {x: number, y: number};

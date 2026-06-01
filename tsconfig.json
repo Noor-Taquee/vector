@@ -7,11 +7,7 @@
     // Environment Settings
     "module": "nodenext",
     "target": "esnext",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    "types": ["vite/client"],
 
     // Imports
     "allowJs": true,
@@ -42,5 +38,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+  "exclude": ["node_modules", "dist", "vite.config.ts"]
 }
