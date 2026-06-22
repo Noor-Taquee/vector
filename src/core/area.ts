@@ -1,24 +1,25 @@
-
 import { createElement } from "../utils/create-dom.js";
 import type { Vector } from "./vector.js";
 
-export type cordinate = {x: number, y: number};
+export type cordinate = { x: number; y: number };
 
 export class Area {
-  center: cordinate = {x: 0, y: 0};
+  center: cordinate = { x: 0, y: 0 };
   element: HTMLDivElement = createElement("div", { className: "area" });
-  axes: {x: HTMLDivElement, y: HTMLDivElement};
-  
+  axes: { x: HTMLDivElement; y: HTMLDivElement };
+
   focusedVector: Vector | null = null;
   vectorList: Vector[] = [];
   selectedVectorList: Vector[] = [];
 
   constructor() {
-    window.addEventListener("resize", () => { this.configCenter() });
+    window.addEventListener("resize", () => {
+      this.configCenter();
+    });
     this.axes = {
       x: createElement("div", { className: "axis x" }),
-      y: createElement("div", { className: "axis y" })
-    }
+      y: createElement("div", { className: "axis y" }),
+    };
     this.element.append(this.axes.x, this.axes.y);
   }
 

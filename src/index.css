@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
   --primary-header-font: 700 25px "Nunito";
@@ -32,14 +32,18 @@
 }
 
 * {
-  margin: 0; padding: 0; box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
-p, i {
+p,
+i {
   color: var(--primary-text-color);
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
   background: var(--primary-bg);
@@ -61,7 +65,7 @@ html, body {
 .area {
   --bottom: 200px;
   --left: 300px;
-  
+
   position: relative;
   flex-grow: 1;
   height: calc(100% - 20px);
@@ -70,7 +74,7 @@ html, body {
   background: var(--absolute-bg);
   border-radius: 10px;
 
-  >.axis {
+  > .axis {
     --length: 95%;
     --width: 2px;
 
@@ -96,7 +100,7 @@ html, body {
   --width: 5px;
   --i-bottom: 0px;
   --i-left: 0px;
-  
+
   touch-action: none;
   position: absolute;
   bottom: calc(var(--bottom) + var(--i-bottom));
@@ -114,16 +118,14 @@ html, body {
     bottom 300ms ease,
     rotate 300ms ease,
     height 300ms ease,
-    background 300ms ease
-  ;
-  
+    background 300ms ease;
+
   &.moving {
     transition:
       left 300ms ease,
       bottom 300ms ease,
       height 300ms ease,
-      background 300ms ease
-    ;
+      background 300ms ease;
   }
 
   &::after {
@@ -164,7 +166,9 @@ html, body {
   font-size: var(--primary-icon-size);
   transition: right 400ms ease-in-out;
 
-  &.hidden { right: -100%; }
+  &.hidden {
+    right: -100%;
+  }
 }
 
 #controller {
@@ -176,9 +180,14 @@ html, body {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  transition: right 400ms ease-in-out, opacity 200ms ease-in-out;
+  transition:
+    right 400ms ease-in-out,
+    opacity 200ms ease-in-out;
 
-  &.hidden { right: -100%; opacity: 0; }
+  &.hidden {
+    right: -100%;
+    opacity: 0;
+  }
 }
 
 #action-tools {
@@ -186,7 +195,9 @@ html, body {
   justify-content: space-between;
   align-items: center;
 
-  .header { font: var(--primary-header-font);}
+  .header {
+    font: var(--primary-header-font);
+  }
 }
 
 .toggle {
@@ -200,7 +211,9 @@ html, body {
   display: grid;
   place-items: center;
   background: var(--tertiary-bg);
-  i { font-size: var(--medium-icon-size); }
+  i {
+    font-size: var(--medium-icon-size);
+  }
 }
 
 #controller .section {
@@ -222,12 +235,13 @@ html, body {
     background: white;
   }
 
-  &.unused { display: none; }
+  &.unused {
+    display: none;
+  }
 }
 
 #vector-info {
   padding: 10px 0;
-  
 }
 
 .input-div-wrapper {
@@ -244,7 +258,9 @@ html, body {
   gap: 5px;
   font: var(--primary-text-font);
 
-  .label { width: 80px; }
+  .label {
+    width: 80px;
+  }
 
   input {
     background: transparent;
@@ -258,10 +274,12 @@ html, body {
     &.cordinate-input {
       width: 70px;
     }
-    
+
     &.edit {
       outline: 1px solid var(--secondary-text-color);
-      &:focus { outline-color: var(--primary-text-color); }
+      &:focus {
+        outline-color: var(--primary-text-color);
+      }
     }
   }
 }
@@ -278,7 +296,7 @@ html, body {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  
+
   &.edit {
     &:hover {
       outline: 1px solid var(--color);
@@ -326,9 +344,13 @@ html, body {
   border: none;
   border-radius: 5px;
   background: transparent;
-  i { font-size: var(--medium-icon-size); }
+  i {
+    font-size: var(--medium-icon-size);
+  }
 
-  &:hover { background: var(--highlight-color); }
+  &:hover {
+    background: var(--highlight-color);
+  }
 }
 
 #vector-list {
@@ -377,37 +399,54 @@ html, body {
   display: flex;
   gap: 5px;
   align-items: center;
-  i { font-size: var(--small-icon-size); }
-  
-  .delete-btn, .selection-div {
+  i {
+    font-size: var(--small-icon-size);
+  }
+
+  .delete-btn,
+  .selection-div {
     cursor: pointer;
     padding: 5px;
     border: none;
     border-radius: 6px;
     background: transparent;
-    
-    &:hover { background: var(--highlight-color); }
-    
+
+    &:hover {
+      background: var(--highlight-color);
+    }
+
     i {
-      opacity: 1; right: 0;
-      transition: right 200ms ease, opacity 200ms ease;
+      opacity: 1;
+      right: 0;
+      transition:
+        right 200ms ease,
+        opacity 200ms ease;
     }
   }
-  
+
   .selection-div {
     display: none;
-    i { opacity: 0; right: 100%; }
+    i {
+      opacity: 0;
+      right: 100%;
+    }
   }
 }
 
 #vector-list-wrapper.selection {
   .selection-div {
     display: flex;
-    i { opacity: 1; right: 0; }
+    i {
+      opacity: 1;
+      right: 0;
+    }
   }
   .delete-btn {
     display: none;
-    i { opacity: 0; right: 100%; }
+    i {
+      opacity: 0;
+      right: 100%;
+    }
   }
 }
 
@@ -426,8 +465,13 @@ html, body {
   gap: 10px;
   background: var(--secondary-bg);
 
-  p { font: var(--primary-text-font);}
-  p, i { color: var(--primary-bg); }
+  p {
+    font: var(--primary-text-font);
+  }
+  p,
+  i {
+    color: var(--primary-bg);
+  }
 
   &#add-vector {
     margin: auto 0;

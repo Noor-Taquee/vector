@@ -1,4 +1,3 @@
-
 import { createElement } from "../utils/create-dom.js";
 import { Vector } from "./vector.js";
 
@@ -19,23 +18,28 @@ export const controller = createElement("div", { id: "controller" });
 
 const controller_header = createElement("div", {
   id: "action-tools",
-  className: "section"
+  className: "section",
 });
 
 const header = createElement("p", {
   className: "header",
-  textContent: "Info"
+  textContent: "Info",
 });
 
-const themeSwitchBtn = createElement("button", {
-  className: "toggle",
-}, [ createElement("i", { className: "ph-bold ph-sun-dim" })]);
+const themeSwitchBtn = createElement(
+  "button",
+  {
+    className: "toggle",
+  },
+  [createElement("i", { className: "ph-bold ph-sun-dim" })],
+);
 
 themeSwitchBtn.addEventListener("click", () => {
-  app.dataset.theme = (app.dataset.theme == "light") ? "dark" : "light";
+  app.dataset.theme = app.dataset.theme == "light" ? "dark" : "light";
   const icon = themeSwitchBtn.querySelector("i");
   if (!icon) return;
-  icon.className = (app.dataset.theme == "light") ? "ph-bold ph-sun-dim" : "ph-bold ph-moon";
+  icon.className =
+    app.dataset.theme == "light" ? "ph-bold ph-sun-dim" : "ph-bold ph-moon";
 });
 
 const hideBtn = createElement("button", { id: "hide-controller" });
@@ -48,13 +52,17 @@ function hideController() {
 
 controller_header.append(header, themeSwitchBtn);
 
-const addVectorBtn = createElement("button", {
-  id: "add-vector",
-  className: "action-btn"
-}, [
-  createElement("i", { className: "ph-bold ph-plus" }),
-  createElement("p", { textContent: "Add Vector" })
-]);
+const addVectorBtn = createElement(
+  "button",
+  {
+    id: "add-vector",
+    className: "action-btn",
+  },
+  [
+    createElement("i", { className: "ph-bold ph-plus" }),
+    createElement("p", { textContent: "Add Vector" }),
+  ],
+);
 addVectorBtn.addEventListener("click", addVector);
 
 function addVector() {
@@ -67,8 +75,11 @@ function addVector() {
 }
 
 document.addEventListener("selection-mode", (e) => {
-  if ((e as CustomEvent<{ started: boolean }>).detail.started) { addVectorBtn.classList.add("inactive") }
-  else { addVectorBtn.classList.remove("inactive") }
+  if ((e as CustomEvent<{ started: boolean }>).detail.started) {
+    addVectorBtn.classList.add("inactive");
+  } else {
+    addVectorBtn.classList.remove("inactive");
+  }
 });
 
 controller.append(controller_header, info_section, list_section, addVectorBtn);
