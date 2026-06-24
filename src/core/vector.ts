@@ -1,6 +1,6 @@
 import { createElement } from "../utils/create-dom.js";
 import { generateId } from "../utils/logic/id.js";
-import { Area, area, type cordinate } from "./area.js";
+import { Area, area, type Cordinate2d } from "./area.js";
 
 export class Vector {
   id: string;
@@ -15,10 +15,10 @@ export class Vector {
   color: string;
 
   /** Offset from the origin */
-  displayCenter: cordinate = { x: 0, y: 0 };
+  displayCenter: Cordinate2d = { x: 0, y: 0 };
 
   /** Calculated center from viewport for pointer calculations */
-  center: cordinate = { x: 0, y: 0 };
+  center: Cordinate2d = { x: 0, y: 0 };
 
   /** component of the vector on axes */
   component: { i: number; j: number } = { i: 0, j: 0 };

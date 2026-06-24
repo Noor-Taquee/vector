@@ -1,10 +1,10 @@
 import { createElement } from "../utils/create-dom.js";
 import type { Vector } from "./vector.js";
 
-export type cordinate = { x: number; y: number };
+export type Cordinate2d = { x: number; y: number };
 
 export class Area {
-  center: cordinate = { x: 0, y: 0 };
+  center: Cordinate2d = { x: 0, y: 0 };
   element: HTMLDivElement = createElement("div", { className: "area" });
   axes: { x: HTMLDivElement; y: HTMLDivElement };
 
