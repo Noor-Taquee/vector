@@ -139,10 +139,10 @@ export class Vector {
 }
 
 function handleMove(e: PointerEvent, vector: Vector) {
-  let dx = e.clientX - vector.center.x;
-  let dy = e.clientY - vector.center.y;
+  const dx = e.clientX - vector.center.x;
+  const dy = e.clientY - vector.center.y;
 
-  let radians = Math.atan2(-dy, dx);
+  const radians = Math.atan2(-dy, dx);
   vector.angle = radians * (180 / Math.PI);
   vector.calculateComponent();
 
